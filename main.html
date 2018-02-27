@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="slide/flexslider.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="slide/jquery.flexslider.js"></script>
+    <title>
+        セラク銀行トップページ
+    </title>
+
+    <!-- スクリプト -->
+    <script type="text/javascript" charset="utf-8">
+
+        // スライダー
+        $(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                controlNav: "thumbnails"
+            });
+        });
+
+        //タブ切り替え
+        $(function () {
+
+            // ①タブをクリックしたら発動
+            $('.news-tab li').click(function () {
+
+                // ②クリックされたタブの順番を変数に格納
+                var index = $('.news-tab li').index(this);
+
+                // ③画像を一旦非クリックの状態にリセットするためのループ処理
+                $('.news-tab li img').each(function () {
+
+                    // ④_onのファイル名を_offに書き換え、変数に格納
+                    var file = $(this).attr('src').replace(/_on/g, '_off');
+
+                    // ⑤書き換えたファイル名をimg要素に適用する
+                    $(this).attr('src', file);
+                });
+
+                // ⑥改めてクリックされた画像のファイル名を_onに書き換え、変数に格納
+                var file2 = $(this).children('img').attr('src').replace(/_off/g, '_on');
+
+                // ⑦書き換えたファイル名をimg要素に適用する
+                $(this).children('img').attr('src', file2);
+
+                // ⑧コンテンツを一旦非表示にし、クリックされた順番のコンテンツのみを表示
+                $('.news-contents ul').removeClass('show').eq(index).addClass('show');
+
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-all">
+                <div class="logo">
+                    <img src="images/logo.png" alt="せらく銀行">
+                </div>
+                <div class="header-right">
+                    <div class="bankcode">
+                        <div class="bankcode-logo">
+                            <img src="images/bank_code.png" alt="金融機関コード">
+                        </div>
+                    </div>
+                    <div class="text-size">
+                        <p>文字の大きさが変更できます</p>
+                        <ul>
+                            <li>
+                                <img src="images/fontsize_s.png" alt="小">
+                            </li>
+                            <li>
+                                <img src="images/fontsize_m.png" alt="中">
+                            </li>
+                            <li>
+                                <img src="images/fontsize_l.png" alt="大">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site-map">
+                        <ul>
+                            <li>
+                                <img src="images/globalsite.png" alt="global site">
+                            </li>
+                            <li>
+                                <img src="images/sitemap.png" alt="site map">
+                            </li>
+                        </ul>
+                        <div class="serch-box">
+                            <input type="text" name="search_word" placeholder="検索ワードを入力">
+                            <input type="image" src="images/search_btn.jpg" alt="検索ボタン">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="navibar">
+            <ul>
+                <li>
+                    <h4>個人のお客様</h4>
+                </li>
+                <li>
+                    <h4>法人のお客様</h4>
+                </li>
+                <li>
+                    <h4>株主・投資家の皆様</h4>
+                </li>
+                <li>
+                    <h4>採用情報</h4>
+                </li>
+                <li>
+                    <h4>せらく銀行について</h4>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="contents">
+        <!-- 左コンテンツ -->
+        <div class="left-contents">
+            <!-- FlexSlider 2 slideshow here -->
+            <div class="top-image">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li data-thumb="images/thum_1.jpg">
+                            <img src="images/new1.jpg" alt="せらく銀行 かりる・ためる・ふやすなら信頼のせらく銀行へ">
+                        </li>
+                        <li data-thumb="images/thum_2.jpg">
+                            <img src="images/new2.jpg" alt="お知らせ2">
+                        </li>
+                        <li data-thumb="images/thum_3.jpg">
+                            <img src="images/new3.jpg" alt="お知らせ3">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pages">
+                <div class="page">
+                    <h4>個人のお客様</h4>
+                    <ul>
+                        <li>
+                            <a href="#">口座をひらく</a>
+                        </li>
+                        <li>
+                            <a href="#">住宅ローン</a>
+                        </li>
+                        <li>
+                            <a href="#">投資信託</a>
+                        </li>
+                        <li>
+                            <a href="#">外貨預金</a>
+                        </li>
+                        <li>
+                            <a href="#">バンクイック</a>
+                        </li>
+                        <li>
+                            <a href="#">キャンペーン一覧</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page">
+                    <h4>個人のお客様</h4>
+                    <ul>
+                        <li>
+                            <a href="#">口座をひらく</a>
+                        </li>
+                        <li>
+                            <a href="#">でんさい</a>
+                        </li>
+                        <li>
+                            <a href="#">CSRの取り組み</a>
+                        </li>
+                        <li>
+                            <a href="#">地球環境問題への対応</a>
+                        </li>
+                        <li>
+                            <a href="#">地域・社会への貢献</a>
+                        </li>
+                        <li>
+                            <a href="#">Global Website</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page">
+                    <h4>株主・投資家の皆様</h4>
+                    <ul>
+                        <li>
+                            <a href="#">決算広告</a>
+                        </li>
+                        <li>
+                            <a href="#">社債情報</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page">
+                    <h4>採用情報</h4>
+                    <ul>
+                        <li>
+                            <a href="#">新卒採用</a>
+                        </li>
+                        <li>
+                            <a href="#">中途採用</a>
+                        </li>
+                        <li>
+                            <a href="#">海外現地採用</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- tab -->
+            <div class="news">
+                <ul class="news-tab">
+                    <li class="select">
+                        <img src="images/tab01_on.png" alt="新着情報">
+                    </li>
+                    <li>
+                        <img src="images/tab02_off.png" alt="ニュースリリース">
+                    </li>
+                    <li>
+                        <img src="images/tab03_off.png" alt="キャンペーン">
+                    </li>
+                    <li>
+                        <img src="images/tab04_off.png" alt="お知らせ情報">
+                    </li>
+                </ul>
+
+                <div class="news-contents">
+                    <ul class="show">
+                        <li>
+                            ダミー1
+                        </li>
+                        <li>
+                            ダミー2
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            ダミー3
+                        </li>
+                        <li>
+                            ダミー4
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            ダミー5
+                        </li>
+                        <li>
+                            ダミー6
+                        </li>
+                        <li>
+                            ダミー7
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            ダミー8
+                        </li>
+                        <li>
+                            ダミー9
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右コンテンツ -->
+        <!-- ログイン -->
+        <div class="right-contents">
+            <div class="login">
+                <h4>インターネットバンキング</h4>
+                <p>せらく銀行インターネットバンキング</p>
+                <a href="#">
+                    <img src="images/login_01.png" alt="ログインサービス">
+                </a>
+                <a href="#">
+                    <img src="images/login_02.png" alt="初めてログインする方">
+                </a>
+                <p>パスワードを忘れた方はこちら</p>
+            </div>
+
+            <!-- サービスの案内 -->
+            <div class="service-nav">
+                <h4>サービスのご案内</h4>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/service_01.png" alt="店舗・ATM検索">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/service_02.png" alt="資料請求">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/service_03.png" alt="金利一覧">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/service_04.png" alt="手数料">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/service_05.png" alt="よくあるご質問">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/service_06.png" alt="投資信託基準価格一覧">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- その他の案内 -->
+            <div class="etc-nav">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="images/banner_01.png" alt="口座開設のご案内">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/banner_02.png" alt="金融経済ニュース">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/banner_03.png" alt="詐欺に注意！！">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/banner_02_01.png" alt="通帳・印鑑キャッシュカードを紛失・盗難された方へ">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/banner_02_02.png" alt="テレビCM・動画のご紹介">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/banner_02_03.png" alt="今から考える教育ローン">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="undercontents-group">
+                <div class="undercontents">
+                    <p>個人のお客様</p>
+                    <ul>
+                        <li>
+                            <a href="#">普通預金</a>
+                        </li>
+                        <li>
+                            <a href="#">定期預金・積立</a>
+                        </li>
+                        <li>
+                            <a href="#">外貨預金</a>
+                        </li>
+                        <li>
+                            <a href="#">外債</a>
+                        </li>
+                        <li>
+                            <a href="#">ファンドラップ</a>
+                        </li>
+                        <li>
+                            <a href="#">個人向け国債</a>
+                        </li>
+                        <li>
+                            <a href="#">退職金運用のご案内</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="undercontents">
+                    <p>法人のお客様</p>
+                    <ul>
+                        <li>
+                            <a href="#">資金調達</a>
+                        </li>
+                        <li>
+                            <a href="#">国際業務・為替取引</a>
+                        </li>
+                        <li>
+                            <a href="#">福利厚生</a>
+                        </li>
+                        <li>
+                            <a href="#">事業戦略・経営相談</a>
+                        </li>
+                        <li>
+                            <a href="#">振込・入金確認の効率化</a>
+                        </li>
+                        <li>
+                            <a href="#">電子記録国際権・手形関連</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="undercontents">
+                    <p>株主・投資家の皆様</p>
+                    <ul>
+                        <li>
+                            <a href="#">せらくグループの概要</a>
+                        </li>
+                        <li>
+                            <a href="#">決算広告</a>
+                        </li>
+                        <li>
+                            <a href="#">社債情報</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="undercontents">
+                    <p>採用情報</p>
+                    <ul>
+                        <li>
+                            <a href="#">新卒採用</a>
+                        </li>
+                        <li>
+                            <a href="#">キャリア採用</a>
+                        </li>
+                        <li>
+                            <a href="#">海外現地採用</a>
+                        </li>
+                        <li>
+                            <a href="#">契約社員のお仕事</a>
+                        </li>
+                        <li>
+                            <a href="#">派遣社員のお仕事</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="undercontents">
+                    <p>せらく銀行について</p>
+                    <ul>
+                        <li>
+                            <a href="#">ごあいさつ</a>
+                        </li>
+                        <li>
+                            <a href="#">事業内容</a>
+                        </li>
+                        <li>
+                            <a href="#">企業の社会的責任(CSR)</a>
+                        </li>
+                        <li>
+                            <a href="#">役員一覧</a>
+                        </li>
+                        <li>
+                            <a href="#">組織体制</a>
+                        </li>
+                        <li>
+                            <a href="#">お問い合わせ先</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-link">
+            <ul>
+                <li>
+                    <a href="#">お客様の個人情報保護について</a>
+                </li>
+                <li>
+                    <a href="#">金融商品勧誘方針</a>
+                </li>
+                <li>
+                    <a href="#">法人等のお客様の情報について</a>
+                </li>
+                <li>
+                    <a href="#">本サイトのご利用にあたって</a>
+                </li>
+                <li>
+                    <a href="#">反社会的勢力に対する基本方針</a>
+                </li>
+            </ul>
+        </div>
+        <small>
+            Copylight&copy;2015 Seraku Banking Corporation. All Rights Reserved.
+        </small>
+    </footer>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.jquery.min.js"></script>
+
+<!-- <script src="scripts/flexibility.js"></script>
+<script
+src="http://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="scripts/slick.min.js"></script>
+<script>
+      // スライドショー
+      $(function(){
+        $('.top-image-nav').slick({
+          asNavFor: '.top-image-show',
+          draggable: true,
+          focusOnSelect: true,
+          slidesToShow: 3,
+          slidesToScroll: 1
+        });
+      });
+
+      // タブ切り替え
+      $(function() {
+      $('.news-area-tab li').click(function() {
+        var index = $('.news-area-tab li').index(this);
+        $('.newspool').css('display','none');
+        $('.news-area-tab li').removeAttr('style');
+        $('.headline').css('background-image', 'url(images/tab01_off.png)');
+        $('.newspool').eq(index).css('display','block');
+        $('.newspool').removeClass('hidden');
+        $(this).addClass('active').css('background-image', 'url(images/tab0'+(index+1)+'_on.png)');
+      });
+    });
+
+    </script> -->
+
+</html>
